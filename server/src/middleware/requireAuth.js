@@ -3,13 +3,13 @@ const mongoose = require('mongoose')
 const User = mongoose.model('User')
 
 module.exports = (req, res, next) => {
-    const { authorization } = req.headers;
+    const { token } = req.session;
 
-    if (!authorization) {
+    if (!token) {
         return res.status(401).send({ error: "You must be logged in" })
     }
     const SECRET_KEY = process.env.SECRET_KEY;
-    const token = authorization.replace("Bearer ", "")
+    
     jwt.verify(token, SECRET_KEY, async (err, payload) => {
         if (err) {
             return res.status(401).send({ error: "You must be logged in" })
