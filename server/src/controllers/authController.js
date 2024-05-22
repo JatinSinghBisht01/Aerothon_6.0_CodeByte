@@ -20,8 +20,9 @@ const signup = async (req, res) => {
         const user = new User({ email, password });
         await user.save();
         
-        const token = jwt.sign({ userId: user._id }, SECRET_KEY); 
-        res.send({message: 'Registeration Successfull', token })
+        const token = jwt.sign({ userId: user._id }, SECRET_KEY, { expiresIn: '30d' }); 
+        req.session.token = token;
+        res.send({message: 'Registeration Successfull'})
         
     } catch (err) {
         return res.status(500).send(err.message)
@@ -42,8 +43,9 @@ const signin = async (req, res) => {
 
     try {
         await user.comparePassword(password);
-        const token = jwt.sign({ userId: user._id }, SECRET_KEY);
-        res.send({message: 'Logged in Successfully', token });
+        const token = jwt.sign({ userId: user._id }, SECRET_KEY, { expiresIn: '30d' });
+        req.session.token = token;
+        res.send({message: 'Logged in Successfully'});
         
     } catch (err) {
         return res.status(400).send({ error: "wrong password" })   
@@ -51,16 +53,16 @@ const signin = async (req, res) => {
 
 }
 
-// Session need to be implemented
+
 const signout = async (req, res) => {
-    try {
-        
-      res.send({ message: 'Logged out successfully' });
-    } catch (err) {
-        console.log(err)
-      res.status(500).send({ error: 'Logout failed' });
-    }
-  };
+    req.session.destroy(err => {
+        if (err) {
+            return res.status(500).send({ error: 'Logout failed' });
+        }
+        res.clearCookie('connect.sid');
+        res.send({ message: 'Logged out successfully' });
+    });
+}
   
 
 module.exports = {signup, signin, signout};
