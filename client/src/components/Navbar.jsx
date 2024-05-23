@@ -6,7 +6,7 @@ const Navbar = () => {
     <ul className="flex flex-col gap-2 lg:flex-row lg:gap-10">
       <li className={` text-[18px] font-medium cursor-pointer`}>
         <Button>
-          <Link to="/about">About Us</Link>
+          <Link to="/about" >About Us</Link>
         </Button>
       </li>
       <li className={` text-[18px] font-medium cursor-pointer`}>
@@ -28,7 +28,7 @@ const Navbar = () => {
         <Button>
           <Link to="/">Home</Link>
         </Button>
-      </li>
+      </li> 
       {/* <li className={` text-[18px] font-medium cursor-pointer`}>
             {isLoggedIn ? (
               <Button onClick={handleLogout}>Logout</Button>
