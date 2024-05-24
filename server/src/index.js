@@ -6,13 +6,17 @@ const connectDB = require('./database/dbconfig');
 const authRoute = require('./routes/authRoute');
 const requireAuth = require('./middleware/requireAuth');
 const sessionMiddleware = require('./middleware/sessionMiddleware');
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
 connectDB();
 
 app.use(sessionMiddleware);
-app.use(authRoute);
+app.use('/api', authRoute);
 
 app.get('/', requireAuth, (req, res) => {
   res.send('Hello World');

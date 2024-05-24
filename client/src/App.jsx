@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Singin from "./pages/Signin";
 import Signup from "./pages/Singup";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -19,6 +21,9 @@ function App() {
           <Route path="/auth/signup" element={Signup}/>
         </Routes>
       </Router>
+      <Singin/>
+      {/* <Signup/> */}
+      <ToastContainer />
     </div>
   )
 }
