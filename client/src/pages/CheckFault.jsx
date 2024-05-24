@@ -1,4 +1,34 @@
+import { useState } from "react";
+import instance from "../api/instance";
+
 const CheckFault = () => {
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = async (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setSelectedFile(file);
+      console.log('Selected file:', file);
+      try {
+        const response = await instance.post('/api/upload', {
+          image: selectedFile,
+        }, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+  
+        if (response.data.success) {
+          console.log('File uploaded successfully');
+        } else {
+          console.log('File upload failed');
+        }
+      } catch (error) {
+        console.error('Error uploading file:', error);
+      }
+    }
+  };
+
   return (
     
 
@@ -41,11 +71,11 @@ const CheckFault = () => {
 
     <>
       <div class="h-screen font-sans text-gray-900 bg-gradient-to-r from-sky-500 to-indigo-500 border-box">
-        <div class="flex justify-center w-full mx-auto sm:max-w-lg">
+        <div class="flex justify-center w-full mx-auto sm:max-w-lg py-20">
           <div class="flex flex-col items-center justify-center w-full h-auto my-20 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
             <div class="mt-10 mb-10 text-center">
               <h2 class="text-2xl font-semibold mb-2">Upload your files</h2>
-              <p class="text-xs text-gray-500">File should be of format .png</p>
+              <p class="text-xs text-gray-500">File should be of format .png, .jpg, .jpeg</p>
               {/*               
 
 from dotenv import load_dotenv
@@ -88,7 +118,7 @@ submit=st.button("Ask the question") */}
               action="#"
               class="relative w-4/5 h-32 max-w-xs mb-10 bg-white rounded-lg shadow-inner"
             >
-              <input type="file" id="file-upload" class="hidden" />
+              <input type="file" id="file-upload" class="hidden" accept=".png, .jpeg, .jpg" onChange={handleFileChange} />
               <label
                 for="file-upload"
                 class="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer"
