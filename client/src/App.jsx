@@ -7,6 +7,7 @@ import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Singup";
+import CheckFault from "./pages/CheckFault";
 
 const Routing = () => {
   return (
@@ -18,8 +19,8 @@ const Routing = () => {
               <Route path="/home" element={<LandingPage />} />
               <Route path="/contact" element={<ContactPage/>}/>
               <Route path="/about" element={<AboutPage/>}/>
-              {/*<Route path="/check-fault" element={CheckFaultPage}/>
-              <Route path="/chatbot" element={ChatbotPage}/> */}
+              <Route path="/check-fault" element={<CheckFault/>}/>
+              {/* <Route path="/chatbot" element={ChatbotPage}/> */} 
               <Route path="/" element={<Signin/>}/>
               <Route path="/signup" element={<Signup/>}/>
             </Routes>
