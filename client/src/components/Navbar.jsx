@@ -41,15 +41,16 @@ const Navbar = () => {
       </li>
       <li className={` text-[18px] font-medium cursor-pointer`}>
         <Button>
-          <Link
-            to="/chatbot"
+          <a
+            href="http://localhost:8501/"
             className={`text-[#4dcbe4] transition transform duration-700 delay-100 hover:text-white hover:scale-110 ${
               activeLink === "chatbot" ? "text-white scale-110" : ""
             }`}
             onClick={() => handleLinkClick("chatbot")}
+            target="_blank"
           >
             Chatbot
-          </Link>
+          </a>
         </Button>
       </li>
       <li className={` text-[18px] font-medium cursor-pointer`}>
