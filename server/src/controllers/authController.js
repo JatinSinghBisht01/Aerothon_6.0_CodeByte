@@ -22,7 +22,7 @@ const signup = async (req, res) => {
         
         const token = jwt.sign({ userId: user._id }, SECRET_KEY, { expiresIn: '30d' }); 
         req.session.token = token;
-        res.send({message: 'Registeration Successfull'})
+        res.send({message: 'Account creation successful!', token});
         
     } catch (err) {
         return res.status(500).send(err.message)
@@ -45,10 +45,10 @@ const signin = async (req, res) => {
         await user.comparePassword(password);
         const token = jwt.sign({ userId: user._id }, SECRET_KEY, { expiresIn: '30d' });
         req.session.token = token;
-        res.send({message: 'Logged in Successfully'});
+        res.send({message: 'Sign in successful!', token});
         
     } catch (err) {
-        return res.status(400).send({ error: "wrong password" })   
+        return res.status(400).send({ error: "Wrong password" })   
     }
 
 }
