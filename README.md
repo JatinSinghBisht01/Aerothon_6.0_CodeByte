@@ -49,7 +49,7 @@ To get started with the Aircraft Sustainability Platform, follow these steps:
 
 - Frontend: HTML, CSS, JavaScript, React.js
 - Backend: Node.js, Express.js
-- Machine Learning: python(Streamlit), roboflow, gemini,google.generativeai,YOLO V8
+- Machine Learning: python(Streamlit), Roboflow, Gemini, Google.generativeai, YOLO V8
 - Database: MongoDB
 - Additional Libraries/Frameworks: Axios, Chart.js
 - Security Frameworks- JWT, Bcrypt, Express session
