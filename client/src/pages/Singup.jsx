@@ -17,7 +17,7 @@ const Signup = () => {
 
     if (response.success) {
         toast.success(response.message);
-        // history.push('/home');
+        history.push('/home');
     } else {
         toast.error(response.error);
     }
@@ -28,7 +28,7 @@ const Signup = () => {
     <>
     <div className="flex min-h-full flex-col justify-center px-6 py-32 lg:px-28">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <img className="mx-auto h-20 w-auto" src="../../aircraft.png" alt="Your Company" />
+            <img className="mx-auto h-20 w-auto" src="../../aircraft.png" alt="Aircraft" />
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign up to create a new account</h2>
         </div>
 
@@ -57,7 +57,7 @@ const Signup = () => {
 
     <p className="mt-10 text-center text-sm text-gray-500">
       Already a member?
-      <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"> Sign in now !</a>
+      <a href="/signin" className="font-semibold leading-6 text-sky-600 hover:text-sky-500"> Sign in now !</a>
     </p>
   </div>
 </div>

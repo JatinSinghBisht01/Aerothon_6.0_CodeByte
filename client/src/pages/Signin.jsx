@@ -17,7 +17,7 @@ const Signin = () => {
 
     if (response.success) {
         toast.success(response.message);
-        // history.push('/home');
+        history.push('/home');
     } else {
         toast.error(response.error);
     }
@@ -29,7 +29,7 @@ const Signin = () => {
     <>
     <div className="flex min-h-full flex-col justify-center px-6 py-32 lg:px-28">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <img className="mx-auto h-20 w-auto" src="../../aircraft.png" alt="Your Company" />
+            <img className="mx-auto h-20 w-auto" src="../../aircraft.png" alt="Aircraft" />
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
         </div>
   <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -45,7 +45,7 @@ const Signin = () => {
             <div className="flex items-center justify-between">
                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">Password</label>
                 <div className="text-sm">
-                    <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+                    <a href="#" className="font-semibold text-sky-600 hover:text-sky-500">Forgot password?</a>
                 </div>
                 </div>
                 <div className="mt-2">
@@ -60,7 +60,7 @@ const Signin = () => {
 
     <p className="mt-10 text-center text-sm text-gray-500">
       Not a member?
-      <a href="#" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"> Join now !</a>
+      <a href="/signup" className="font-semibold leading-6 text-sky-600 hover:text-sky-500"> Join now !</a>
     </p>
   </div>
 </div>
