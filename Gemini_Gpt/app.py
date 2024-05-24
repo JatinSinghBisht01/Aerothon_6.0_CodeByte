@@ -102,10 +102,10 @@ st.markdown(
     }
     </style>
     <div class="custom-navbar">
-        <a href="#about">Contact Us</a>
-        <a href="#contact" class="active">Chatbot</a>
-        <a href="#services">About Us</a>
-        <a href="#home">Home</a>
+        <a href="http://localhost:5173/contact">Feedback</a>
+        <a href="/" class="active">Chatbot</a>
+        <a href="http://localhost:5173/about">About Us</a>
+        <a href="http://localhost:5173/home">Home</a>
         <a href="#logo" class="logo">AIRBUS</a>
     </div>
     """,
