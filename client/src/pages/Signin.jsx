@@ -3,13 +3,15 @@ import CustomButton from '../components/CustomButton'
 import CustomInput from '../components/CustomInput'
 import { Context as AuthContext } from '../context/AuthContext'
 import { toast } from 'react-toastify'
-
+import {useNavigate} from 'react-router-dom'
+ 
 const Signin = () => {
   const { signin } = useContext(AuthContext);
   const [form , setForm] = useState({
     email: '',
     password: ''
   })
+  const navigate = useNavigate()
   
   const onSubmit = async(e) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ const Signin = () => {
 
     if (response.success) {
         toast.success(response.message);
-        history.push('/home');
+        navigate('/home');
     } else {
         toast.error(response.error);
     }

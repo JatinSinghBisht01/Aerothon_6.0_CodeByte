@@ -11,7 +11,7 @@ const Navbar = () => {
   console.log(localStorageToken);
 
   const handleLinkClick = (link) => {
-      setActiveLink(link);
+    setActiveLink(link);
   };
 
   const handleLogout = async () => {
@@ -20,79 +20,104 @@ const Navbar = () => {
       setActiveLink(null);
       toast.success(response.message);
       history.push("/signin");
-    }
-    else {
+    } else {
       toast.error(response.error);
-    
     }
-  }
+  };
   const navList = (
     <ul className="flex flex-col gap-2 lg:flex-row lg:gap-10 ">
       <li className={` text-[18px] font-medium cursor-pointer`}>
         <Button>
-          <Link to="/about" className={`text-[#4dcbe4] transition transform duration-700 delay-100 hover:text-white hover:scale-110 ${
-                    activeLink === "about" ? "text-white scale-110" : ""
-                }`}
-                onClick={() => handleLinkClick("about")}
-                >About Us</Link>
+          <Link
+            to="/home"
+            className={`text-[#4dcbe4] transition transform duration-700 delay-100 hover:text-white hover:scale-110 ${
+              activeLink === "home" ? "text-white scale-110" : ""
+            }`}
+            onClick={() => handleLinkClick("home")}
+          >
+            Home
+          </Link>
         </Button>
       </li>
       <li className={` text-[18px] font-medium cursor-pointer`}>
         <Button>
-          <Link to="/contact" className={`text-[#4dcbe4] transition transform duration-700 delay-100 hover:text-white hover:scale-110 ${
-                    activeLink === "contact" ? "text-white scale-110" : ""
-                }`}
-                onClick={() => handleLinkClick("contact")}
-                >Contact</Link>
+          <Link
+            to="/chatbot"
+            className={`text-[#4dcbe4] transition transform duration-700 delay-100 hover:text-white hover:scale-110 ${
+              activeLink === "chatbot" ? "text-white scale-110" : ""
+            }`}
+            onClick={() => handleLinkClick("chatbot")}
+          >
+            Chatbot
+          </Link>
         </Button>
       </li>
       <li className={` text-[18px] font-medium cursor-pointer`}>
         <Button>
-          <Link to="/chatbot" className={`text-[#4dcbe4] transition transform duration-700 delay-100 hover:text-white hover:scale-110 ${
-                    activeLink === "chatbot" ? "text-white scale-110" : ""
-                }`}
-                onClick={() => handleLinkClick("chatbot")}
-                >Chatbot</Link>
+          <Link
+            to="/check-fault"
+            className={`text-[#4dcbe4] transition transform duration-700 delay-100 hover:text-white hover:scale-110 ${
+              activeLink === "fault" ? "text-white scale-110" : ""
+            }`}
+            onClick={() => handleLinkClick("fault")}
+          >
+            Check Fault
+          </Link>
         </Button>
       </li>
       <li className={` text-[18px] font-medium cursor-pointer`}>
         <Button>
-          <Link to="/check-fault" className={`text-[#4dcbe4] transition transform duration-700 delay-100 hover:text-white hover:scale-110 ${
-                    activeLink === "fault" ? "text-white scale-110" : ""
-                }`}
-                onClick={() => handleLinkClick("fault")}
-                >Check Fault</Link>
+          <Link
+            to="/about"
+            className={`text-[#4dcbe4] transition transform duration-700 delay-100 hover:text-white hover:scale-110 ${
+              activeLink === "about" ? "text-white scale-110" : ""
+            }`}
+            onClick={() => handleLinkClick("about")}
+          >
+            About Us
+          </Link>
         </Button>
       </li>
       <li className={` text-[18px] font-medium cursor-pointer`}>
         <Button>
-          <Link to="/" className={`text-[#4dcbe4] transition transform duration-700 delay-100 hover:text-white hover:scale-110 ${
-                    activeLink === "home" ? "text-white scale-110" : ""
-                }`}
-                onClick={() => handleLinkClick("home")}
-                >Home</Link>
+          <Link
+            to="/contact"
+            className={`text-[#4dcbe4] transition transform duration-700 delay-100 hover:text-white hover:scale-110 ${
+              activeLink === "contact" ? "text-white scale-110" : ""
+            }`}
+            onClick={() => handleLinkClick("contact")}
+          >
+            Contact
+          </Link>
         </Button>
       </li>
+
       <li className={` text-[18px] font-medium cursor-pointer`}>
-        { localStorageToken ===null ? ( 
-          <Button 
-          className={`transition transform duration-700 delay-100 py-1 px-2 ${
-            activeLink === "signin" ? 'bg-black text-white hover:bg-black hover:text-white hover:scale-125 ' : 'bg-white text-black hover:text-white hover:bg-black hover:scale-125'
-        }`} onClick={() => handleLinkClick("signin")}
-        >
-            <Link to="/signin" >Signin</Link>
+        {localStorageToken === null ? (
+          <Button
+            className={`transition transform duration-700 delay-100 py-1 px-2 ${
+              activeLink === "signin"
+                ? "bg-black text-white hover:bg-black hover:text-white hover:scale-125 "
+                : "bg-white text-black hover:text-white hover:bg-black hover:scale-125"
+            }`}
+            onClick={() => handleLinkClick("signin")}
+          >
+            <Link to="/">Signin</Link>
           </Button>
         ) : (
-          <Button 
-              className={`transition transform duration-700 delay-100 py-1 px-2 ${
-                activeLink === "signin" ? 'bg-black text-white hover:bg-black hover:text-white hover:scale-125 ' : 'bg-white text-black hover:text-white hover:bg-black hover:scale-125'
-            }`} onClick={handleLogout}
-            >
-                Logout
-              </Button>
+          <Button
+            className={`transition transform duration-700 delay-100 py-1 px-2 ${
+              activeLink === "signin"
+                ? "bg-black text-white hover:bg-black hover:text-white hover:scale-125 "
+                : "bg-white text-black hover:text-white hover:bg-black hover:scale-125"
+            }`}
+            onClick={handleLogout}
+          >
+            Logout
+          </Button>
         )}
       </li>
-    </ul> 
+    </ul>
   );
 
   return (

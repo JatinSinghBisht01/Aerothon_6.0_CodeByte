@@ -15,12 +15,12 @@ const Routing = () => {
               <Navbar />
             </div>
             <Routes>
-              <Route path="/" element={<LandingPage />} />
+              <Route path="/home" element={<LandingPage />} />
               <Route path="/contact" element={<ContactPage/>}/>
               <Route path="/about" element={<AboutPage/>}/>
               {/*<Route path="/check-fault" element={CheckFaultPage}/>
               <Route path="/chatbot" element={ChatbotPage}/> */}
-              <Route path="/signin" element={<Signin/>}/>
+              <Route path="/" element={<Signin/>}/>
               <Route path="/signup" element={<Signup/>}/>
             </Routes>
           </Router>
