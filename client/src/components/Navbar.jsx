@@ -87,7 +87,7 @@ const Navbar = () => {
             }`}
             onClick={() => handleLinkClick("contact")}
           >
-            Contact
+            Feedback
           </Link>
         </Button>
       </li>

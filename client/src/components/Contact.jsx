@@ -71,7 +71,7 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl h-1/3"
       >
-        <h3 className={styles.sectionHeadText}>Contact</h3>
+        <h3 className={styles.sectionHeadText}>Feedback</h3>
 
         <form
           ref={formRef}
@@ -90,7 +90,7 @@ const Contact = () => {
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Message</span>
+            <span className="text-white font-medium mb-4">Your views</span>
             <textarea
               rows={5}
               name="message"
