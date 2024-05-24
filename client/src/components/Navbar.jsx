@@ -8,7 +8,6 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState(null);
   const { signout } = useContext(AuthContext);
   const localStorageToken = localStorage.getItem("token");
-  console.log(localStorageToken);
 
   const handleLinkClick = (link) => {
     setActiveLink(link);

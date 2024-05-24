@@ -3,26 +3,24 @@ import instance from "../api/instance";
 
 const CheckFault = () => {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [prediction, setPrediction] = useState(null);
 
   const handleFileChange = async (e) => {
     const file = e.target.files[0];
     if (file) {
       setSelectedFile(file);
-      console.log('Selected file:', file);
+    
       try {
-        const response = await instance.post('/api/upload', {
+        const response = await instance.post('/api/predict', {
           image: selectedFile,
         }, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
         });
-  
-        if (response.data.success) {
-          console.log('File uploaded successfully');
-        } else {
-          console.log('File upload failed');
-        }
+
+        console.log('Response:', response);
+        
       } catch (error) {
         console.error('Error uploading file:', error);
       }
