@@ -3,8 +3,8 @@ import instance from "../api/instance";
 import {toast} from 'react-toastify';
 
 const CheckFault = () => {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [prediction, setPrediction] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(true);
+  const [prediction, setPrediction] = useState(false);
 
   const handleFileChange = async (e) => {
     e.preventDefault();
@@ -24,6 +24,7 @@ const CheckFault = () => {
         });
   
         console.log('Response:', response.data);
+        setPrediction(true);
         toast.success('Image uploaded successfully');
       } catch (error) {
         console.error('Error uploading file:', error);
@@ -74,12 +75,14 @@ const CheckFault = () => {
 
 
     <>
-      <div class="h-screen font-sans text-gray-900 bg-gradient-to-r from-sky-500 to-indigo-500 border-box">
-        <div class="flex justify-center w-full mx-auto sm:max-w-lg py-20">
-          <div class="flex flex-col items-center justify-center w-full h-auto my-20 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
-            <div class="mt-10 mb-10 text-center">
-              <h2 class="text-2xl font-semibold mb-2">Upload your files</h2>
-              <p class="text-xs text-gray-500">File should be of format .png, .jpg, .jpeg</p>
+      <div className="h-screen font-sans text-gray-900 bg-gradient-to-r from-sky-500 to-indigo-500 border-box">
+        <div className="flex justify-center w-full mx-auto sm:max-w-lg py-20">
+          {
+            prediction == false ? (
+              <div className="flex flex-col items-center justify-center w-full h-auto my-20 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
+            <div className="mt-10 mb-10 text-center">
+              <h2 className="text-2xl font-semibold mb-2">Upload your files</h2>
+              <p className="text-xs text-gray-500">File should be of format .png, .jpg, .jpeg</p>
               {/*               
 
 from dotenv import load_dotenv
@@ -120,18 +123,18 @@ submit=st.button("Ask the question") */}
             </div>
             <form
               action="#"
-              class="relative w-4/5 h-32 max-w-xs mb-10 bg-white rounded-lg shadow-inner"
+              className="relative w-4/5 h-32 max-w-xs mb-10 bg-white rounded-lg shadow-inner"
             >
-              <input type="file" id="file-upload" class="hidden" accept=".png, .jpeg, .jpg" onChange={handleFileChange} />
+              <input type="file" id="file-upload" className="hidden" accept=".png, .jpeg, .jpg" onChange={handleFileChange} />
               <label
                 for="file-upload"
-                class="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer"
+                className="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer"
               >
-                <p class="z-10 text-xs font-light text-center text-gray-500">
+                <p className="z-10 text-xs font-light text-center text-gray-500">
                   Drag & Drop your files here
                 </p>
                 <svg
-                  class="z-10 w-8 h-8 text-indigo-400"
+                  className="z-10 w-8 h-8 text-indigo-400"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -180,6 +183,10 @@ submit=st.button("Ask the question") */}
               </label>
             </form>
           </div>
+            ) : (
+              <img className="mx-auto h-20 w-auto" src="../../sampleOutput.jpeg" alt="Aircraft" />
+            )
+          }
         </div>
       </div>
     </>
