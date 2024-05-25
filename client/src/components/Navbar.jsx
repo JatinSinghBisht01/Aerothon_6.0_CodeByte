@@ -79,6 +79,23 @@ const Navbar = () => {
           </Button>
         </li>
       )}
+      {
+        localStorageToken != null && (
+          <li className="text-[18px] font-medium cursor-pointer">
+            <Button>
+              <Link
+                to="/results"
+                className={`text-[#4dcbe4] transition transform duration-700 delay-100 hover:text-white hover:scale-110 ${
+                  activeLink === "results" ? "text-white scale-110" : ""
+                }`}
+                onClick={() => handleLinkClick("results")}
+              >
+                Results
+              </Link>
+            </Button>
+          </li>
+        )
+      }
       <li className="text-[18px] font-medium cursor-pointer">
         <Button>
           <Link
@@ -105,6 +122,7 @@ const Navbar = () => {
           </Link>
         </Button>
       </li>
+      
       <li className="text-[18px] font-medium cursor-pointer">
         {localStorageToken === null ? (
           <Button
