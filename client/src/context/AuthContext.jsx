@@ -64,6 +64,7 @@ const setErrorMessage = dispatch => errorMessage => {
     dispatch({ type: "add_error", payload: errorMessage });
 };
 
+
 export const { Context, Provider } = createDataContext(
     authReducer,
     { signin, signup, signout, clearErrorMessage, setErrorMessage },
