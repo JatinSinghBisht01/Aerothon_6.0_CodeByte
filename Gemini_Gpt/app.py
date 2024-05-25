@@ -28,7 +28,6 @@ st.markdown(
     """
     <style>
     .main {
-        background-color: #EEF7FF; 
         padding: 10px;
     }
     .stButton>button {
@@ -54,15 +53,7 @@ st.markdown(
         padding: 10px;
         border: 2px solid #0288D1;
     }
-    .stHeader {
-        color: #0288D1;  
-    }
-    .stSubheader {
-        color: #000000;  
-    }
-    .stMarkdown {
-        color: #000000;  
-    }
+
     .custom-navbar {
         overflow: hidden;
         background-color: #57A6A1;
