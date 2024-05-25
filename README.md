@@ -36,23 +36,32 @@ The Aircraft Fault Detection Platform is a web-based solution that connects airc
 To get started with the Aircraft Sustainability Platform, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/JatinSinghBisht01/Aerothon_6.0_CodeByte`
+2. Install the required dependencies .
+3. ### Client
+       1. `cd client`
+       2. `npm install`
+       3. start client server 'npm run dev`
+   
+4. ### Server 
+       1. `cd server`
+       2. `npm install`
+       3. Configure the database connection and other settings in the configuration files.
+       4. start server 'npm run dev`
+5. ### Chatbot server
+       1. `cd Gemini_Gpt`
+       2. `pip install -r requirements.tx`
+       3. Start chatbot server 'streamlit run app.py` 
 
-2. Install the required dependencies by running `npm install` in the project directory of .
-
-3. Configure the database connection and other settings in the configuration files.
-
-4. Start the development server using `npm start`.
-
-5. Access the platform through the provided URL or open it locally on your web browser.
+7. Access the platform through the provided URL or open it locally on your web browser on `http://localhost:5173/`.
 
 ## Technologies Used
 
-- Frontend: HTML, CSS, JavaScript, React.js
+- Frontend: HTML, JavaScript, React.js, Tailwind CSS, @emailjs/browser, framer-motion, react-toastify, material-ui
 - Backend: Node.js, Express.js
 - Machine Learning: python(Streamlit), Roboflow, Gemini, Generativeai, YOLO V8
 - Database: MongoDB
-- Additional Libraries/Frameworks: Axios, Chart.js
-- Security Frameworks- JWT, Bcrypt, Express session
+- Additional Libraries/Frameworks: Axios, react-typewriter, react-3/fibre
+- Security Frameworks- JWT, Bcrypt, Express session, multer
 
 ## Contributing
 
