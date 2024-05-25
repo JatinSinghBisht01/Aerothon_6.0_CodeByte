@@ -1,6 +1,7 @@
 import { Typewriter } from "react-simple-typewriter";
 import Navbar from "../components/Navbar";
 import { styles } from "../styles";
+import Features from "../components/Features";
 
 const LandingPage = () => {
   return (
@@ -48,6 +49,7 @@ const LandingPage = () => {
           </section>
         </div>
       </div>
+      <Features />
     </>
   );
 };
