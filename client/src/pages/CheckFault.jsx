@@ -1,15 +1,21 @@
 import { useState } from "react";
 import instance from "../api/instance";
+import {toast} from 'react-toastify';
 
 const CheckFault = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [prediction, setPrediction] = useState(null);
 
   const handleFileChange = async (e) => {
+    e.preventDefault();
     const file = e.target.files[0];
+    
+    const formData = new FormData();
+    formData.append('image', file);
+    
     if (file) {
       setSelectedFile(file);
-    
+  
       try {
         const response = await instance.post('/api/predict', {
           image: selectedFile,
@@ -18,14 +24,16 @@ const CheckFault = () => {
             'Content-Type': 'multipart/form-data',
           },
         });
-
-        console.log('Response:', response);
-        
+  
+        console.log('Response:', response.data);
+        toast.success('Image uploaded successfully');
       } catch (error) {
         console.error('Error uploading file:', error);
+        toast.error('Error uploading file');
       }
     }
   };
+  
 
   return (
     

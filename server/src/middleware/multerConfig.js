@@ -7,14 +7,14 @@ const storage = multer.memoryStorage();
 
 const upload = multer({
   storage,
-  limits: { fileSize: 10 * 1024 * 1024 } // Limit file size to 10 MB 
+  limits: { fileSize: 10 * 1024 * 1024 }
 });
 
-// const dUri = new Datauri();
+const dUri = new Datauri();
 
-// const dataUri = file => {
-//   return dUri.format(path.extname(file.originalname).toString(), file.buffer);
+const dataUri = file => {
+  return dUri.format(path.extname(file.originalname).toString(), file.buffer);
  
-// };
+};
 
-module.exports = { upload };
+module.exports = {upload, dataUri};
