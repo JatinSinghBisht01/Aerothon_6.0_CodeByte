@@ -79,7 +79,7 @@ Contributions to the Fly Detector Platform project are welcome! If you have any 
 
 ## Security
 
-If you discover any security-related issues or vulnerabilities, please contact the project team immediately at [@JatinSinghBisht01](https://github.com/JatinSinghBisht01). We appreciate your help in improving the security of the platform.
+If you discover any security-related issues or vulnerabilities, please contact the project team immediately at [@JatinSinghBisht01](https://github.com/JatinSinghBisht01) or [@AbhinavMalhotra01](https://github.com/abhinavmalhotra01). We appreciate your help in improving the security of the platform.
 
 ## License
 
