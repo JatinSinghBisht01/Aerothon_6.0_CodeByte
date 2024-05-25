@@ -34,7 +34,10 @@ The Fly Detector Platform is a web-based solution that connects aircraft manufac
 ### Feedback page
 ![image](https://github.com/JatinSinghBisht01/Aerothon_6.0_CodeByte/assets/113239170/4b53de52-e55c-4966-987d-137093816724)
 
+### Model training
+![image](https://github.com/JatinSinghBisht01/Aerothon_6.0_CodeByte/assets/113239170/022ac88a-81f0-490a-952a-c71788d714ab)
 
+![image](https://github.com/JatinSinghBisht01/Aerothon_6.0_CodeByte/assets/113239170/f295e2a3-5349-4dbb-969b-03522324d8e6)
 
 
 
