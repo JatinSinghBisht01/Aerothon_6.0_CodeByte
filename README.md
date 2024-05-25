@@ -20,13 +20,13 @@ The Fly Detector Platform is a web-based solution that connects aircraft manufac
 
 ### Home Page
 
-## Diagrams
+## Chatbot Page
 
-### Deployment Diagram
+### Check fault Page
 
 ### Flow Diagram
 
-### Use Case Diagrams
+### Feedback page
 
 
 
