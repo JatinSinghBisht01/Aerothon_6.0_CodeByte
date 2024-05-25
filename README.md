@@ -40,27 +40,27 @@ To get started with the Aircraft Sustainability Platform, follow these steps:
 3. ### Client
        1. `cd client`
        2. `npm install`
-       3. start client server 'npm run dev`
+       3. To start client server 'npm run dev`
    
 4. ### Server 
        1. `cd server`
        2. `npm install`
        3. Configure the database connection and other settings in the configuration files.
-       4. start server 'npm run dev`
+       4. To start server 'npm run dev`
 5. ### Chatbot server
        1. `cd Gemini_Gpt`
        2. `pip install -r requirements.tx`
-       3. Start chatbot server 'streamlit run app.py` 
+       3. To start chatbot server 'streamlit run app.py` 
 
 7. Access the platform through the provided URL or open it locally on your web browser on `http://localhost:5173/`.
 
 ## Technologies Used
 
-- Frontend: HTML, JavaScript, React.js, Tailwind CSS, @emailjs/browser, framer-motion, react-toastify, material-ui
+- Frontend: HTML, JavaScript, React.js, Tailwind CSS, Framer-motion, Material-ui
 - Backend: Node.js, Express.js
 - Machine Learning: python(Streamlit), Roboflow, Gemini, Generativeai, YOLO V8
 - Database: MongoDB
-- Additional Libraries/Frameworks: Axios, react-typewriter, react-3/fibre
+- Additional Libraries/Frameworks: Axios, react-simple-typewriter, react-three/fibre, emailjs/browser, react-toastify
 - Security Frameworks- JWT, Bcrypt, Express session, multer
 
 ## Contributing
