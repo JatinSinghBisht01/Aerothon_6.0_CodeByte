@@ -2,10 +2,12 @@ import { useState } from "react";
 import instance from "../api/instance";
 import { toast } from "react-toastify";
 import { styles } from "../styles";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const CheckFault = () => {
   const [selectedFile, setSelectedFile] = useState(true);
   const [prediction, setPrediction] = useState(false);
+  const [loader, setLoader] = useState(false);
 
   const handleFileChange = async (e) => {
     e.preventDefault();
@@ -25,7 +27,12 @@ const CheckFault = () => {
         });
 
         console.log("Response:", response.data);
-        setPrediction(true);
+        setLoader(true);
+        
+        setTimeout(() => { 
+          setLoader(false)
+          setPrediction(true)
+         }, 5000);
         toast.success("Image uploaded successfully");
       } catch (error) {
         console.error("Error uploading file:", error);
@@ -70,7 +77,8 @@ const CheckFault = () => {
     <>
       <div className="h-screen font-sans text-gray-900 bg-gradient-to-r from-sky-500 to-indigo-500 border-box">
         <div className="flex justify-center w-full mx-auto sm:max-w-lg py-20">
-          {prediction == false ? (
+          <ClipLoader color="#ffffff" loading={loader} size={150} />
+          {prediction == false && !loader ? (
             <div className="flex flex-col items-center justify-center w-full h-auto my-20 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
               <div className="mt-10 mb-10 text-center">
                 <h2 className="text-2xl font-semibold mb-2">
@@ -188,16 +196,18 @@ submit=st.button("Ask the question") */}
               <div
                 className="inset-0 flex 
                     items-center justify-center
-                    text-white z-20"
+                    text-white z-20 pt-10"
               >
-                <div className="text-center">
-                  <h1 className={styles.sectionHeadText}>The output</h1>
-                  <img
-                    className="mx-auto h-200 w-200"
-                    src="../../sampleOutput.jpg"
-                    alt="Aircraft"
-                  />
-                </div>
+                { prediction && (
+                  <div className="text-center">
+                    <h1 className={styles.sectionHeadText}>The output</h1>
+                    <img
+                      className="mx-auto h-200 w-200 pt-10"
+                      src="../../sampleOutput.jpg"
+                      alt="Aircraft"
+                    />
+                  </div>
+                )}
               </div>
 
               <div>
