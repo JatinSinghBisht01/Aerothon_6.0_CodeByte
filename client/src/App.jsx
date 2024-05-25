@@ -8,6 +8,7 @@ import AboutPage from "./pages/AboutPage";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Singup";
 import CheckFault from "./pages/CheckFault";
+import Footer from "./components/Footer";
 
 const Routing = () => {
   return (
@@ -24,6 +25,7 @@ const Routing = () => {
               <Route path="/" element={<Signin/>}/>
               <Route path="/signup" element={<Signup/>}/>
             </Routes>
+            <Footer />
           </Router>
 
   )

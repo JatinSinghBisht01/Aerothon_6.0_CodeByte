@@ -15,7 +15,7 @@ const About = () => {
         <h3 className={styles.sectionHeadText}>About Us</h3>
 
         <div className="text-white mb-12">
-          The Aircraft Fault Detection Platform is a web-based solution that
+          The Fly Detector Platform is a web-based solution that
           connects aircraft manufacturers, airlines, and maintenance facilities
           to facilitate the early detection and diagnosis of faults in aircraft
           components. The platform leverages advanced analytics and machine
@@ -30,6 +30,9 @@ const About = () => {
           <div className="mt-4  text-white">
             Abhinav Malhotra: PEC-ECE'25 <br />
             Jatin Singh Bisht: PEC-ECE'25 <br />
+            Shaurya Raghuvanshi : MNIT Bhopal'25 <br />
+            Sweety Kumari : NIT Patna'25 <br />
+            Khushboo Kumari : NIT Patna'25 <br />
           </div>
         </p>
       </motion.div>

@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const connectDB = require('./database/dbconfig');
 const authRoute = require('./routes/authRoute');
+const predictRoute = require('./routes/predictRoute');
 const requireAuth = require('./middleware/requireAuth');
 const sessionMiddleware = require('./middleware/sessionMiddleware');
 const cors = require('cors');
@@ -17,6 +18,7 @@ connectDB();
 
 app.use(sessionMiddleware);
 app.use('/api', authRoute);
+app.use('/api', predictRoute);
 
 app.get('/', requireAuth, (req, res) => {
   res.send('Hello World');

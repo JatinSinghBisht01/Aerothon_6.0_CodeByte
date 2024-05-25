@@ -4,6 +4,8 @@ import CustomInput from '../components/CustomInput'
 import { Context as AuthContext } from '../context/AuthContext'
 import { toast } from 'react-toastify'
 import {useNavigate} from 'react-router-dom'
+
+const passwordPattern = /^(?=.*[a-z].*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{5,}$/;
  
 const Signin = () => {
   const { signin } = useContext(AuthContext);
@@ -16,6 +18,12 @@ const Signin = () => {
   const onSubmit = async(e) => {
     e.preventDefault();
     const response = await signin(form);
+  
+    if (!passwordPattern.test(form.password)) {
+        toast.info('Password must contain at least 5 characters, one uppercase, two lowercase, one number, and one special character, example: Abc2@');
+        return;
+    }
+
 
     if (response.success) {
         toast.success(response.message);
@@ -51,7 +59,8 @@ const Signin = () => {
                 </div>
                 </div>
                 <div className="mt-2">
-                    <CustomInput name={"password"} type={"password"} value={form.password} onChange={(e) => setForm({...form, password: e.target.value})} autocomplete={"current-password"} required={true} />
+                    <CustomInput name={"password"} type={"password"} value={form.password} onChange={(e) => setForm({...form, password: e.target.value})} autocomplete={"current-password"} 
+                    required={true} pattern={passwordPattern} />
                 </div>
             </div>
 
