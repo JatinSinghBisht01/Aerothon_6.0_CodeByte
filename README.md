@@ -1,6 +1,6 @@
-# Aircraft Fault Detection Platform
+# Fly Detector Platform
 
-The Aircraft Fault Detection Platform is a web-based solution that connects aircraft manufacturers, airlines, and maintenance facilities to facilitate the early detection and diagnosis of faults in aircraft components. The platform leverages advanced analytics and machine learning to monitor aircraft health, predict potential failures, and recommend maintenance actions, thereby enhancing safety and operational efficiency in the aviation industry.
+The Fly Detector Platform is a web-based solution that connects aircraft manufacturers, airlines, and maintenance facilities to facilitate the early detection and diagnosis of faults in aircraft components. The platform leverages advanced analytics and machine learning to monitor aircraft health, predict potential failures, and recommend maintenance actions, thereby enhancing safety and operational efficiency in the aviation industry.
 
 ## Overview
 
@@ -75,7 +75,7 @@ This Project is made by:-
 
 This project is made for the Final Round of Airbus Aerothon 6.0.
 
-Contributions to the Aircraft Fault Detection Platform project are welcome! If you have any ideas, suggestions, or bug reports, please feel free to open an issue or submit a pull request. Please make sure to follow the project's code of conduct.
+Contributions to the Fly Detector Platform project are welcome! If you have any ideas, suggestions, or bug reports, please feel free to open an issue or submit a pull request. Please make sure to follow the project's code of conduct.
 
 ## Security
 
