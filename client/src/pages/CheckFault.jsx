@@ -17,9 +17,7 @@ const CheckFault = () => {
       setSelectedFile(file);
   
       try {
-        const response = await instance.post('/api/predict', {
-          image: selectedFile,
-        }, {
+        const response = await instance.post('/api/predict', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
