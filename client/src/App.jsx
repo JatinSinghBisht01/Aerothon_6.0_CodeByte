@@ -9,6 +9,7 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Singup";
 import CheckFault from "./pages/CheckFault";
 import Footer from "./components/Footer";
+import Results from "./pages/Results";
 
 const Routing = () => {
   return (
@@ -21,7 +22,7 @@ const Routing = () => {
               <Route path="/contact" element={<ContactPage/>}/>
               <Route path="/about" element={<AboutPage/>}/>
               <Route path="/check-fault" element={<CheckFault/>}/>
-              {/* <Route path="/chatbot" element={ChatbotPage}/> */} 
+              <Route path="/results" element={<Results />}/> 
               <Route path="/" element={<Signin/>}/>
               <Route path="/signup" element={<Signup/>}/>
             </Routes>
