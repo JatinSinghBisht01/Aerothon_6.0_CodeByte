@@ -8,12 +8,13 @@ import {useNavigate} from 'react-router-dom'
 const passwordPattern = /^(?=.*[a-z].*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{5,}$/;
  
 const Signin = () => {
-  const { signin } = useContext(AuthContext);
+  const { signin, isUserLoggedIn } = useContext(AuthContext);
+  const navigate = useNavigate()
+
   const [form , setForm] = useState({
     email: '',
     password: ''
   })
-  const navigate = useNavigate()
   
   const onSubmit = async(e) => {
     e.preventDefault();
@@ -33,6 +34,10 @@ const Signin = () => {
     }
     
   }
+
+  useEffect(() => {
+    if(isUserLoggedIn) navigate('/home');
+  }, [isUserLoggedIn]);
   
 
   return (

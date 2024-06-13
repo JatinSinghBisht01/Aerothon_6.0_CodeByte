@@ -16,6 +16,11 @@ const authReducer = (state, action) => {
     }
 };
 
+const isUserLoggedIn = () => {
+    const token = localStorage.getItem("token");
+    return token ? true : false;
+};
+
 const clearErrorMessage = dispatch => () => {
     dispatch({ type: "clear_error_message" });
 };
@@ -67,6 +72,6 @@ const setErrorMessage = dispatch => errorMessage => {
 
 export const { Context, Provider } = createDataContext(
     authReducer,
-    { signin, signup, signout, clearErrorMessage, setErrorMessage },
+    { signin, signup, signout, isUserLoggedIn, clearErrorMessage, setErrorMessage },
     { token: null, errorMessage: "" }
 );
