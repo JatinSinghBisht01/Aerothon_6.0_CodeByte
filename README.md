@@ -59,7 +59,7 @@ To get started with the Aircraft Sustainability Platform, follow these steps:
        4. To start server 'npm run dev`
 5. ### Chatbot server
        1. `cd Gemini_Gpt`
-       2. `pip install -r requirements.tx`
+       2. `pip install -r requirements.txt`
        3. To start chatbot server 'streamlit run app.py` 
 
 7. Access the platform through the provided URL or open it locally on your web browser on `http://localhost:5173/`.
