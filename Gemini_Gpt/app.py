@@ -93,11 +93,11 @@ st.markdown(
     }
     </style>
     <div class="custom-navbar">
-        <a href="http://localhost:5173/contact">Feedback</a>
+        <a href="https://fly-detector.onrender.com/contact">Feedback</a>
         <a href="/" class="active">Chatbot</a>
-        <a href="http://localhost:5173/about">About Us</a>
-        <a href="http://localhost:5173/home">Home</a>
-        <a href="#logo" class="logo">AIRBUS</a>
+        <a href="https://fly-detector.onrender.com/about">About Us</a>
+        <a href="https://fly-detector.onrender.com/home">Home</a>
+        <a href="https://fly-detector.onrender.com/home" class="logo">AIRBUS</a>
     </div>
     """,
     unsafe_allow_html=True
