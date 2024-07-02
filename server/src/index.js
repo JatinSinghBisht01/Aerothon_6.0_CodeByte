@@ -11,7 +11,7 @@ const cors = require('cors');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors({
-  origin: 'http://localhost:5173'
+  origin: 'https://fly-detector.onrender.com/'
 }));
 connectDB();
 
