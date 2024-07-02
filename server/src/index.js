@@ -11,7 +11,8 @@ const cors = require('cors');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors({
-  origin: 'https://fly-detector.onrender.com/'
+  origin: 'https://fly-detector.onrender.com/',
+  credentials: true,
 }));
 connectDB();
 
