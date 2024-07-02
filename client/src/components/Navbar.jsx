@@ -52,7 +52,7 @@ const Navbar = () => {
         <li className="text-[18px] font-medium cursor-pointer">
           <Button>
             <a
-              href="http://localhost:8501/"
+              href="https://chatbot-nin7.onrender.com/"
               className={`text-[#4dcbe4] transition transform duration-700 delay-100 hover:text-white hover:scale-110 ${
                 activeLink === "chatbot" ? "text-white scale-110" : ""
               }`}
