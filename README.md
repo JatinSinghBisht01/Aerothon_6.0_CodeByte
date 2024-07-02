@@ -71,7 +71,7 @@ To get started with the Aircraft Sustainability Platform, follow these steps:
 - Machine Learning: python(Streamlit), Roboflow, Gemini, Generativeai, YOLO V8
 - Database: MongoDB
 - Additional Libraries/Frameworks: Axios, react-simple-typewriter, react-three/fibre, emailjs/browser, react-toastify
-- Security Frameworks- JWT, Bcrypt, Express session, multer
+- Security Frameworks- JWT, Bcrypt, Cookie-session, multer
 
 ## Contributing
 
