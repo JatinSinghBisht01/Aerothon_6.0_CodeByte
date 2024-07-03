@@ -11,7 +11,7 @@ const cors = require('cors');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors({
-  origin: 'https://fly-detector.onrender.com/',
+  origin: 'https://fly-detector.onrender.com',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
