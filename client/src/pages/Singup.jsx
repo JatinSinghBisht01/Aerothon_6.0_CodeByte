@@ -3,6 +3,7 @@ import CustomButton from '../components/CustomButton'
 import CustomInput from '../components/CustomInput'
 import { Context as AuthContext } from '../context/AuthContext'
 import { toast } from 'react-toastify'
+import { Link } from 'react-router-dom'
 
 const passwordPattern = /^(?=.*[a-z].*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{5,}$/;
 
@@ -65,7 +66,7 @@ const Signup = () => {
 
     <p className="mt-10 text-center text-sm text-gray-500">
       Already a member?
-      <a href="/" className="font-semibold leading-6 text-sky-600 hover:text-sky-500"> Sign in now !</a>
+      <Link to={"/"} className="font-semibold leading-6 text-sky-600 hover:text-sky-500"> Sign in now !</Link>
     </p>
   </div>
 </div>
